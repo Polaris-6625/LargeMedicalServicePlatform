@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.service_1.Dao.DaoMapper">
+    <insert id="AddUser">
+        insert into user (root,password,sex,username,status) values (#{root},#{password},#{sex},#{username},#{status});
+    </insert>
+    <insert id="insertDocter">
+        insert into docter (name,sex,position,age,dateTime,endTime,remarks,department) values (#{name},#{sex},#{position},#{age},#{dateTime},#{endTime},#{remarks},#{department});
+    </insert>
+    <insert id="addPreDocter">
+        insert into ${user} (preDocter) values (#{preDocter});
+    </insert>
+    <update id="createUser">
+        create table ${user}
+        (
+            preDocter varchar(255),
+            history   varchar(255),
+            text_ly varchar(255)
+        );
+    </update>
+    <delete id="delDocter">
+        delete from docter where id = #{delDocter};
+    </delete>
+
+    <select id="Querry" resultType="java.lang.Integer">
+        select * from cs;
+    </select>
+    <select id="SelectUserE" resultType="com.example.service_1.RealClass.User">
+        select * from user where root = #{root} and password = #{password};
+    </select>
+    <select id="rootExistence" resultType="java.lang.String">
+        select * from user where root = #{root};
+    </select>
+    <select id="selectAllDocter" resultType="com.example.service_1.RealClass.Docter">
+        select * from docter;
+    </select>
+    <select id="SelectDocter" resultType="com.example.service_1.RealClass.Docter">
+        select * from docter where name = #{name};
+    </select>
+
+</mapper>

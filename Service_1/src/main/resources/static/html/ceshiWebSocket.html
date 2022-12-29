@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../axios/axios.js"></script>
+    <script>
+        axios({
+            url:"http://localhost:8080/check",
+            methods: "get"
+        }).then((resp)=>{
+            if (resp.data === "ok" || resp.data === "manage") {
+                // alert("欢迎您");
+                console.log("成功进入");
+            }
+            else {
+                alert("请先登录")
+                location.href = "http://localhost:8080/html/login.html";
+            }
+        });
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="messages"></div>
+<form onsubmit="sendMessage(); return false;">
+  <input id="message" type="text" />
+  <button type="submit">Send</button>
+</form>
+<script>
+  const socket = new WebSocket('ws://localhost:8080/websocket');
+  const messages = document.getElementById('messages');
+  let cook = document.cookie;
+  console.log(cook);
+  console.log()
+  socket.onmessage = function (event) {
+    const message = document.createElement('div');
+    message.innerText = event.data;
+    messages.appendChild(message);
+  };
+
+  function sendMessage() {
+    const message = document.getElementById('message').value;
+    console.log(message);
+    socket.send(message);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+html,body {
+    margin:0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+.cssLine {
+    display: inline;
+    height: 1rem;
+    width: auto;
+}
+detnD {
+    position: absolute;
+}
+body {
+    /*background-color: #8c939d;*/
+    /*background-image: linear-gradient(90deg,#72767b, #8c939d);*/
+}
+.redBlock {
+    background-color: red;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    margin-left: 0px;
+    animation: move 5s;
+    animation-iteration-count: infinite;
+}
+.orangeBlock {
+    background-color: orange;
+    width: 0.85rem;
+    height: 0.85rem;
+    position: absolute;
+    margin-left: 18px;
+    animation: move 4.5s;
+    animation-iteration-count: infinite;
+}
+.yellowBlock {
+    background-color: yellow;
+    width: 0.71rem;
+    height: 0.71rem;
+    position: absolute;
+    margin-left: 34px;
+    animation: move 4s;
+    animation-iteration-count: infinite;
+}
+.greenBlock {
+    position: absolute;
+    background-color: green;
+    width: 0.68rem;
+    height: 0.68rem;
+    margin-left: 48px;
+    animation: move 3.5s;
+    animation-iteration-count: infinite;
+}
+.blueBlock {
+    background-color: blue;
+    width: 0.54rem;
+    height: 0.54rem;
+    position: absolute;
+    margin-left: 61px;
+    animation: move 3s;
+    animation-iteration-count: infinite;
+}
+.cyanBlock {
+    background-color: cyan;
+    width: 0.49rem;
+    height: 0.49rem;
+    position: absolute;
+    margin-left: 72px;
+    animation: move 2.5s;
+    animation-iteration-count: infinite;
+}
+.purpleBlock {
+    background-color: purple;
+    width: 0.41rem;
+    height: 0.41rem;
+    position: absolute;
+    margin-left: 82px;
+    animation: move 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    from{top:0px}
+    to{top: 90%}
+}
+.bottomBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 5.4rem;
+    top: 100%;
+    position: sticky;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-width: 4px;
+    border-color: red;
+    border-style: double;
+    border-radius: 2rem 2rem;
+    background-color: #cf9236;
+    animation: move_2 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.b1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 75%;
+    height: 75%;
+    border-color: red;
+    border-style: double;
+    border-radius: 1rem 1rem;
+    background-color: aquamarine;
+}
+.b2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 75%;
+    height: 75%;
+    border-color: red;
+    border-style: double;
+    border-radius: 1rem 1rem;
+    background-color: #a4da89;
+}
+.b3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 75%;
+    height: 75%;
+    border-color: red;
+    border-style: double;
+    border-radius: 1rem 1rem;
+    background-color: yellow;
+}
+@keyframes move_2 {
+    from{left: 0;transform: rotate(0deg)}
+    to{left: 95%;transform: rotate(360deg)}
+}
+h1 {
+    color: #dd6161;
+}
+
+/**/
+
+.damo {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin-top: -175px;
+    margin-left: 500px;
+
+    overflow: hidden;
+}
+.damo1 {
+    width: 6000px;
+    height: 300px;
+    margin: 180px auto;
+    animation:text 15s infinite  linear;
+    animation-direction: inherit;
+    font-size: 0px;
+}
+.damo1 img {
+    width: 600px;
+    height: 300px;
+    float: left;
+}
+@keyframes text {          /*0%-20%是播放下一个图片，0%-10%是图片暂停的时间*/
+    0%,5%{
+        margin-left:0px;
+    }
+    10%,15%{
+        margin-left:-600px;
+    }
+    20%,25%{
+        margin-left:-1200px;
+    }
+    30%,35%{
+        margin-left:-1800px;
+    }
+    40%,45%{
+        margin-left:-2400px;
+    }
+    50%,55% {
+        margin-left: -3000px;
+    }
+    60%,65%{
+        margin-left: -3600px;
+    }
+    70%,75% {
+        margin-left: -4200px;
+    }
+}
+h1 {
+    position: relative;
+    font-family: "华文彩云";
+    color: #cf9236;
+    margin-left: 22px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+@-webkit-keyframes MyMove1 {
+    from {top: 0px;}
+    to {top: 750px;}
+}
+.My_1 {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: relative;
+    animation: MyMove1 5s infinite;
+    -webkit-animation: MyMove1 8s infinite;
+}
+@-webkit-keyframes MyMove2 {
+    from {top: -50px;}
+    to {top: 700px;}
+}
+.My_2 {
+    margin-left: 50px;
+    width: 45px;
+    height: 45px;
+    background-color: orange;
+    position: relative;
+    animation: MyMove2 5s infinite;
+    -webkit-animation: MyMove2 7s infinite;
+}
+@-webkit-keyframes MyMove3 {
+    from {top: -95px;}
+    to {top: 655px;}
+}
+.My_3 {
+    margin-left: 95px;
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+    position: relative;
+    animation: MyMove3 5s infinite;
+    -webkit-animation: MyMove3 6s infinite;
+}
+@-webkit-keyframes MyMove4 {
+    from{top: -135px;}
+    to {top: 615px;}
+}
+.My_4 {
+    margin-left: 135px;
+    width: 35px;
+    height: 35px;
+    background-color: green;
+    position: relative;
+    animation: MyMove4 5s infinite;
+    -webkit-animation: MyMove4 5s infinite;
+}
+@-webkit-keyframes MyMove5 {
+    from{top: -170px;}
+    to{top: 580px}
+}
+.My_5 {
+    margin-left: 170px;
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    position: relative;
+    animation: MyMove5 5s infinite;
+    -webkit-animation: MyMove5 4s infinite;
+}
+@-webkit-keyframes MyMove6 {
+    from {top: -200px;}
+    to {top: 550px;}
+}
+.My_6 {
+    margin-left: 200px;
+    width: 25px;
+    height: 25px;
+    background-color: #00F7DE;
+    position: relative;
+    animation: MyMove6 5s infinite;
+    -webkit-animation: MyMove6 3s infinite;
+}
+@-webkit-keyframes MyMove7 {
+    from {top: -225px;}
+    to {top: 525px;}
+}
+.My_7 {
+    margin-left: 225px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    animation: MyMove7 5s infinite;
+    -webkit-animation: MyMove7 2s infinite;
+    background-color: purple;
+}
+.contain {
+    text-align: center;
+    font-family: cursive;
+    font-size: 20px;
+}
+.echarts {
+    width: 30%;
+    height: 36%;
+    position: absolute;
+    margin-left: 66%;
+    margin-right: 0px;
+}
+.main {
+    /*margin-left: 5%;*/
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+@keyframes tableMove {
+    from{margin-left: 100%}
+    to{margin-left: 0}
+}
+.table_add {
+    animation: tableMove 2s;
+}
+@keyframes fontMove {
+    from{margin-left: -300px}
+    to{margin-left: 90px}
+}
+.showDetail {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    /*border-width: 3px;*/
+    /*border-style: solid;*/
+    margin-left: 90px;
+    margin-top: 55px;
+    border-color: #8c939d;
+    mso-border-shadow: yes;
+    font-size: 26px;
+    font-family: cursive;
+    color: #dd6161;
+    animation: fontMove 3s;
+}
+.select {
+    margin-left: 100px;
+}

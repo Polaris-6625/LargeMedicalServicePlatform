@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  This is result.
+</body>
+<script src="../axios/axios.js"></script>
+<script>
+    axios({
+        url:"http://localhost:8080/check",
+        method:"get"
+    }).then((resp)=>{
+        if(resp.data === "ok"){
+            console.log(resp.data);
+            alert("successfully");
+        }
+        else {
+            console.log(resp.data);
+            alert(resp.data);
+        }
+    })
+</script>
+</html>

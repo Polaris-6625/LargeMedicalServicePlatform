@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="../axios/axios.js"></script>
+<script>
+    axios({
+        url:"http://localhost:8080/check",
+        methods: "get"
+    }).then((resp)=>{
+        if (resp.data === "ok" || resp.data === "manage") {
+            // alert("欢迎您");
+            console.log("成功进入");
+        }
+        else {
+            alert("请先登录")
+            location.href = "http://localhost:8080/login";
+        }
+    });
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>xx医疗公司一站式医疗服务平台</title>
+    <link rel="stylesheet" href="../element-ui/element-ui.css">
+    <link rel="stylesheet" href="../css/add.css" type="text/css">
+</head>
+<body>
+<header id="app">
+    <el-menu
+            :default-active="activeIndex2"
+            mode="horizontal"
+            background-color="#545c64"
+            text-color="#fff"
+            active-text-color="#ffd04b">
+        <el-menu-item index="1"><a href="/index">首页</a></el-menu-item>
+        <el-submenu index="2">
+            <template slot="title">我的</template>
+            <el-menu-item index="2-1">修改密码</el-menu-item>
+            <el-menu-item index="2-2">退出登录</el-menu-item>
+            <el-menu-item index="2-3"><a href="./communication" style="color: white">医生交流圈</a></el-menu-item>
+            <el-submenu index="2-4">
+                <template slot="title">我的信息</template>
+                <el-menu-item index="2-4-1"><a href="/signNum" style="color: white">挂号</a></el-menu-item>
+                <el-menu-item index="2-4-2">我的收藏</el-menu-item>
+                <el-menu-item index="2-4-3">我的留言</el-menu-item>
+            </el-submenu>
+        </el-submenu>
+        <el-submenu index="3" id="qxManage" :disabled="disabled" @mousemove="FunqxManage">
+            <template slot="title">管理资源</template>
+            <el-menu-item index="3-1"><a href="./addDocter" style="color: white">出诊医生管理</a></el-menu-item>
+            <el-menu-item index="3-2">查询在诊医生</el-menu-item>
+        </el-submenu>
+        <el-menu-item index="4"><a href="" target="_blank">友情赞助</a></el-menu-item>
+        <el-menu-item index="5"></el-menu-item>
+        <el-button @click="login" style="float: right" type="primary" icon="el-icon-user-solid">{{username}}</el-button>
+    </el-menu>
+    <!--        <el-row>-->
+    <!--            <el-col :span="4">-->
+    <!--                <h3>导航栏</h3>-->
+    <!--                <el-menu-->
+    <!--                        default-active="2"-->
+    <!--                        class="el-menu-vertical-demo"-->
+    <!--                        @open="handleOpen"-->
+    <!--                        @close="handleClose">-->
+    <!--                    <el-submenu index="1">-->
+    <!--                        <template slot="title">-->
+    <!--                            <i></i>-->
+    <!--                            <span>导航一</span>-->
+    <!--                        </template>-->
+    <!--                        <el-menu-item-group>-->
+    <!--                            <template slot="title">分组一</template>-->
+    <!--                            <el-menu-item index="1-1">选项1</el-menu-item>-->
+    <!--                            <el-menu-item index="1-2">选项2</el-menu-item>-->
+    <!--                        </el-menu-item-group>-->
+    <!--                        <el-menu-item-group title="分组2">-->
+    <!--                            <el-menu-item index="1-3">选项3</el-menu-item>-->
+    <!--                        </el-menu-item-group>-->
+    <!--                        <el-submenu index="1-4">-->
+    <!--                            <template slot="title">选项4</template>-->
+    <!--                            <el-menu-item index="1-4-1">选项1</el-menu-item>-->
+    <!--                        </el-submenu>-->
+    <!--                    </el-submenu>-->
+    <!--                </el-menu>-->
+    <!--            </el-col>-->
+    <!--        </el-row>-->
+</header>
+<div class="redBlock"></div>
+<div class="orangeBlock"></div>
+<div class="yellowBlock"></div>
+<div class="greenBlock"></div>
+<div class="blueBlock"></div>
+<div class="cyanBlock"></div>
+<div class="purpleBlock"></div>
+<h1>出诊医生信息表</h1>
+<!--  编号，姓名,性别，年龄，职位，出诊时间，备注  -->
+<div class="showDetail">
+    左方填入信息，分别填入就诊的医生姓名，性别，职位，年龄，出诊时间和闭诊事件以及备注。
+</div>
+<main id="main">
+    <div class="main">
+
+    </div>
+</main>
+<footer class="bottomBlock">
+    <div class="b1">
+        <div class="b2">
+            <div class="b3"></div>
+        </div>
+    </div>
+</footer>
+</body>
+<script src="../ECharts/echarts.js"></script>
+<script src="../vue/vue.js"></script>
+<script src="../element-ui/element-ui.js"></script>
+<script src="../JavaScript/add.js"></script>
+</html>
+<!--
+server {
+        listen 8888;
+        server_name localhost;
+        location / {
+                alias /home/ubuntu/MyWebSite/cxsj_fenxiang/linkup/;
+                index index.html index.htm;
+}
+-->
