@@ -30,7 +30,7 @@ new Vue({
 
         },
         login(){
-            location.href = "../html/login.html"
+            location.href = "localhost:8080/login"
         },
         check() {
             axios({
@@ -46,7 +46,7 @@ new Vue({
                 // }
                 else {
                     alert("请先登录")
-                    location.href = "http://localhost:8080/html/login.html";
+                    location.href = "http://localhost:8080/login";
                 }
             })
         },
@@ -97,10 +97,10 @@ new Vue({
     },
     methods : {
         gotoAddDocter() {
-            location.href = "http://localhost:8080/html/add.html";
+            location.href = "http://localhost:8080/add";
         },
         gotoDelDoctor() {
-            location.href = "http://localhost:8080/html/addDocter.html";
+            location.href = "http://localhost:8080/addDocter";
         },
         getInformation() {
             let _this = this;

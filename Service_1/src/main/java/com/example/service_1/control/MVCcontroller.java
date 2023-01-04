@@ -166,16 +166,25 @@ public class MVCcontroller {
 
     @PostMapping("/regist")
     @ResponseBody
-    public String addUserInformation(String root,String password,String sex,String username) {
+    public String addUserInformation(String root,String password,String sex,String username,String checkInf,String checkMessage) {
         System.out.println("root is "+root);
         System.out.println("password is "+password);
         System.out.println("sex is "+sex);
         System.out.println("name is "+username);
-        if(root != null && password != null && sex != null && username != null) {
+        boolean flag = false;
+        Jedis jedis = JedisConnectionFactory.getJedis();
+        String getMessage = jedis.get(checkInf);
+        System.out.println(checkMessage);
+        if (getMessage.equals(checkMessage)) {
+            flag = true;
+        }
+        System.out.println("flag = "+flag);
+        if(root != null && password != null && sex != null && username != null && flag) {
             daoMapper.AddUser(root,password,username,sex,"ok");
             daoMapper.createUser("user_"+root);
+            return "success";
         }
-        return "success";
+        return "failed";
     }
 
     @GetMapping("/check")

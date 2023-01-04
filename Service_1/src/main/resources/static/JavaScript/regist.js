@@ -12,12 +12,26 @@ new Vue({
                 checked:true,
                 real:''
             },
-            agree:false
+            agree:false,
+            checkMessage:"",
+            checkInf:""
         }
     },
     methods:{
         SendMessage() {
-          this.$message("短信服务花钱，经费不足，这里填入123456就可以了");
+            let data = new URLSearchParams();
+            data.append("phone",this.formLabelAlign.username);
+            axios({
+                url:"http://localhost:8081/getMessage",
+                method:"post",
+                data:data
+            }).then((resp)=>{
+                console.log("resp.data is "+resp.data);
+                this.$message("随机验证码为:"+resp.data);
+                this.checkMessage = resp.data.Num;
+                this.checkInf = resp.data.createToken;
+            })
+
         },
         dataOutPutCS() {
             console.log(this.agree);
@@ -29,8 +43,8 @@ new Vue({
                     if(this.formLabelAlign.password !== this.formLabelAlign.passwordQ) {
                         alert("两次密码不一致");
                     }
-                    else if (this.formLabelAlign.real !== "123456") {
-                        alert("请输入短信验证码");
+                    else if (this.formLabelAlign.real !== this.checkMessage) {
+                        alert("请输入正确的验证码");
                     }
                     else {
                         let formData = new URLSearchParams();
@@ -38,6 +52,8 @@ new Vue({
                         formData.append("username",this.formLabelAlign.username);
                         formData.append("password",this.formLabelAlign.password);
                         formData.append("sex",this.formLabelAlign.sex);
+                        formData.append("checkInf",this.checkInf);
+                        formData.append("Num",this.checkMessage);
                         // formData.append("username",this.formLabelAlign.username);
                         let formTest = new URLSearchParams();
                         formTest.append("root",this.formLabelAlign.root);

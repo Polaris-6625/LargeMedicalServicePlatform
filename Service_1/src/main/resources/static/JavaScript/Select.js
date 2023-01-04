@@ -37,7 +37,7 @@ new Vue({
                 // }
                 else {
                     alert("请先登录")
-                    location.href = "http://localhost:8080/html/login.html";
+                    location.href = "http://localhost:8080/login";
                 }
             })
         },
@@ -102,6 +102,7 @@ new Vue({
                 data:list
             }).then((resp)=>{
                 let content = resp.data;
+                content = "id:"+content.id+"<br/>"+"name:"+content.name+"<br/>"+"sex:"+content.sex+"<br/>"+"age:"+content.age+"<br/>"+"position"+content.position+"<br/>"+"dataTime:"+content.dateTime+"<br/>"+"endTime:"+content.endTime+"<br/>"+"remarks:"+content.remarks+"<br/>"+"department:"+content.department
                 console.log("resp.data is  "+resp.data);
                 this.$alert(content, '标题名称', {
                     confirmButtonText: '确定',

@@ -11,7 +11,7 @@
         }
         else {
             alert("请先登录")
-            location.href = "http://localhost:8080/login";
+            location.href = "http://localhost:80800/login";
         }
     });
 </script>
@@ -46,7 +46,7 @@
         <el-submenu index="3" id="qxManage" :disabled="disabled" @mousemove="FunqxManage">
             <template slot="title">管理资源</template>
             <el-menu-item index="3-1"><a href="./addDocter" style="color: white">出诊医生管理</a></el-menu-item>
-            <el-menu-item index="3-2">查询在诊医生</el-menu-item>
+            <el-menu-item index="3-2"><a href="./Select" style="color: white">查询在诊医生</a></el-menu-item>
         </el-submenu>
         <el-menu-item index="4"><a href="" target="_blank">友情赞助</a></el-menu-item>
         <el-menu-item index="5"></el-menu-item>

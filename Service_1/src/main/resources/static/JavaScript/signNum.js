@@ -46,7 +46,7 @@ new Vue({
                 // }
                 else {
                     alert("请先登录")
-                    location.href = "http://localhost:8080/html/login.html";
+                    location.href = "http://localhost:8080/login";
                 }
             })
         },
@@ -129,10 +129,10 @@ new Vue({
             });
         },
         gotoAddDocter() {
-            location.href = "http://localhost:8080/html/add.html";
+            location.href = "http://localhost:8080/add";
         },
         gotoDelDoctor() {
-            location.href = "http://localhost:8080/html/del.html";
+            location.href = "http://localhost:8080/del";
         },
         getInformation() {
             let _this = this;

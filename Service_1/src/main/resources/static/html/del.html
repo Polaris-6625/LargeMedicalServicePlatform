@@ -3,7 +3,7 @@
 <script src="../axios/axios.js"></script>
 <script>
     axios({
-        url:"http://localhost:8080/check",
+        url:"http://polaris.lyyfsq.club:8080/check",
         methods: "get"
     }).then((resp)=>{
         if (resp.data === "ok" || resp.data === "manage") {
@@ -12,7 +12,7 @@
         }
         else {
             alert("请先登录")
-            location.href = "http://localhost:8080/login";
+            location.href = "http://polaris.lyyfsq.club:8080/login";
         }
     });
 </script>

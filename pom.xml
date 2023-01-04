@@ -27,6 +27,7 @@
 
     <modules>
         <module>Service_1</module>
+        <module>Service_2</module>
     </modules>
 
     <packaging>pom</packaging>

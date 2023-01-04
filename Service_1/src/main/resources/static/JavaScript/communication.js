@@ -27,7 +27,7 @@ new Vue({
 
         },
         login(){
-            location.href = "../html/login.html"
+            location.href = "http://localhost:8080/login"
         },
         check() {
             axios({
@@ -43,7 +43,7 @@ new Vue({
                 // }
                 else {
                     alert("请先登录")
-                    location.href = "http://localhost:8080/html/login.html";
+                    location.href = "http://localhost:8080/login";
                 }
             })
         },

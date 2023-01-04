@@ -21,7 +21,7 @@ new Vue({
 
         },
         login(){
-            location.href = "../html/login.html"
+            location.href = ".http://localhost:8080/login"
         },
         check() {
             axios({
@@ -37,7 +37,7 @@ new Vue({
                 // }
                 else {
                     alert("请先登录")
-                    location.href = "http://localhost:8080/html/login.html";
+                    location.href = "http://localhost:8080/login";
                 }
             })
         },
@@ -68,7 +68,7 @@ new Vue({
             let list = new URLSearchParams();
             list.append("cookie",document.cookie);
             axios({
-                url:"http://127.0.0.1:8080/exit",
+                url:"http://localhost:8080/exit",
                 method: "post",
                 headers: {
                     "content-type":"application/x-www-form-urlencoded"

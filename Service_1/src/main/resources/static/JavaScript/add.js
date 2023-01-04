@@ -37,7 +37,7 @@ new Vue({
                 // }
                 else {
                     alert("请先登录")
-                    location.href = "http://localhost:8080/html/login.html";
+                    location.href = "http://localhost:8080/login.html";
                 }
             })
         },
@@ -152,7 +152,7 @@ new Vue({
     },
     methods:{
         exitPage(){
-          location.href = "http://localhost:8080/html/addDocter.html";
+          location.href = "http://localhost:8080/addDocter";
         },
         sendAddToCL() {
             console.log(this.form.name+","+this.form.sex+","+this.form.age+","+this.form.position+","+this.form.dateTime,+","+this.form.endTime+","+this.form.remarks);
