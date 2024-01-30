@@ -29,3 +29,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+src/main/resources/static/axios/*
+src/main/resources/static/vue/*
+src/main/resources/static/ECharts/*
+src/main/resources/static/element-ui/*
